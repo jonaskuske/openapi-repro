@@ -1,0 +1,88 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Repro",
+    "description": "repro",
+    "contact": {
+      "name": "Jonas",
+      "email": "mail@example.com"
+    },
+    "version": "dev"
+  },
+  "paths": {
+    "/examples/": {
+      "get": {
+        "tags": [
+          "Examples"
+        ],
+        "summary": "Get Examples",
+        "operationId": "get_examples",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetExamplesResponse"
+                },
+                "examples": {
+                  "single": {
+                    "summary": "single",
+                    "description": "The value is available in the frontend as route variant `get_examples:200-json-single`.",
+                    "value": {
+                      "examples": [
+                        {
+                          "example_value": "hello world"
+                        }
+                      ]
+                    }
+                  },
+                  "empty": {
+                    "summary": "empty",
+                    "description": "The value is available in the frontend as route variant `get_examples:200-json-empty`.",
+                    "value": {
+                      "examples": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Example": {
+        "properties": {
+          "example_value": {
+            "type": "string",
+            "title": "Example Value"
+          }
+        },
+        "type": "object",
+        "required": [
+          "example_value"
+        ],
+        "title": "Example"
+      },
+      "GetExamplesResponse": {
+        "properties": {
+          "examples": {
+            "items": {
+              "$ref": "#/components/schemas/Example"
+            },
+            "type": "array",
+            "title": "Examples"
+          }
+        },
+        "type": "object",
+        "required": [
+          "examples"
+        ],
+        "title": "GetExamplesResponse"
+      }
+    }
+  }
+}
