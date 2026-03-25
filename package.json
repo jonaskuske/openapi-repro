@@ -2,6 +2,7 @@
   "name": "openapi-repro",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "openapi-ts"
@@ -11,6 +12,6 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "@hey-api/openapi-ts": "^0.94.0"
+    "@hey-api/openapi-ts": "^0.94.4"
   }
 }
